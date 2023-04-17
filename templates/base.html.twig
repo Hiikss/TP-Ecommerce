@@ -21,6 +21,11 @@
             {% include "inc/nav.html.twig" %}
         </div>
     </header>
+
+    <main>
+        {% block body %}{% endblock body %}
+    </main>
+
     <footer>
         <div>&copy;e-commerce {{ "now"|date("Y") }} </div>
     </footer>
