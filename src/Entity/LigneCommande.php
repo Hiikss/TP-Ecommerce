@@ -20,6 +20,10 @@ class LigneCommande
     #[ORM\JoinColumn(nullable: false)]
     private ?Commande $contient = null;
 
+    #[ORM\ManyToOne(inversedBy: 'fait_parti')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Produit $produit = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -45,6 +49,18 @@ class LigneCommande
     public function setContient(?Commande $contient): self
     {
         $this->contient = $contient;
+
+        return $this;
+    }
+
+    public function getProduit(): ?Produit
+    {
+        return $this->produit;
+    }
+
+    public function setProduit(?Produit $produit): self
+    {
+        $this->produit = $produit;
 
         return $this;
     }
