@@ -1,0 +1,52 @@
+:root {
+    --color1: #f0f0f0;
+    --color2: #e3e0cc;
+    --color3: #c5d5c5;
+    --color4: #9fa9a3;
+}
+
+body {
+    background-color: var(--color1);
+    font-family: 'Schibsted Grotesk', sans-serif;
+}
+
+header {
+    background-color: var(--color4);
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: auto;
+}
+
+h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--color2);
+}
+
+footer {
+    text-align: center;
+    background-color: var(--color4);
+    color: white;
+    padding: 2rem 0;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+}

@@ -1,0 +1,17 @@
+<nav>
+    <a href="{{ path('main_home') }}" title="Retour à l'accueil">Accueil</a>
+    <a href="{{ path('main_home') }}" title="Voir le panier">Panier (0)</a>
+        
+    {% if app.user %}
+        <a href="{{ path('main_home') }}" title="Voir le profil">Profil</a>
+        <a href="{{ path('main_home') }}" title="Voir les commandes">Commandes</a>
+        {% if is_granted("ROLE_ADMIN") %}
+            <a href="{{ path('main_home') }}" title="Panel admin">Admin</a>
+        {% endif %}
+        <a href="{{ path('main_home') }}" title="Déconnexion">Logout</a>
+    {% else %}
+        <a href="{{ path('main_home') }}" title="Se connecter">Connexion</a>
+        <a href="{{ path('main_home') }}" title="S'inscrire">Inscription</a>
+    {% endif %}
+
+</nav>
