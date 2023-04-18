@@ -5,6 +5,10 @@
     --color4: #9fa9a3;
 }
 
+::selection {
+    background: var(--color4);
+}
+
 body {
     background-color: var(--color1);
     font-family: 'Schibsted Grotesk', sans-serif;
@@ -20,7 +24,6 @@ header {
     align-items: center;
     width: 70%;
     margin: auto;
-    
 }
 
 h1 a {
@@ -29,10 +32,11 @@ h1 a {
     text-decoration: none;
     font-size: 1.9rem;
     transition: transform 700ms;
-  }
-  h1 a:hover {
+}
+  
+h1 a:hover {
     transform: scale(1.08);
-  }
+}
 
 nav {
     display: flex;
