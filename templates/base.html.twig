@@ -12,23 +12,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    {% block extrastyles %}{% endblock %}
+
 </head>
 
 <body>
-    <header>
-        <div class="header-top">
-            <h1><a href="{{ path('main_home') }}">E-commerce</a></h1>
-            {% include "inc/nav.html.twig" %}
-        </div>
-    </header>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <h1><a href="{{ path('main_home') }}">E-commerce</a></h1>
+                {% include "inc/nav.html.twig" %}
+            </div>
+        </header>
 
-    <main>
-        {% block body %}{% endblock body %}
-    </main>
+        <main>
+            {% block body %}{% endblock body %}
+        </main>
 
-    <footer>
-        <div>&copy;e-commerce {{ "now"|date("Y") }} </div>
-    </footer>
+        <footer>
+            <div>&copy;e-commerce {{ "now"|date("Y") }} </div>
+        </footer>
+    </div>
 </body>
 
 </html>
