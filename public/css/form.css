@@ -1,23 +1,26 @@
 :root {
     --color1: #f0f0f0;
-    --color2: #e3e0cc;
-    --color3: #c5d5c5;
-    --color4: #9fa9a3;
+    --color2: #a1cca5;
+    --color3: #8fb996;
+    --color4: #709775;
+    --color5: #415d43;
+}
+
+main {
+    margin: auto;
 }
 
 section {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 70vh;
-    width: 100%;
 }
 
 .form-box {
     position: relative;
     width: 400px;
     height: 450px;
-    background-color: var(--color3);
+    background-color: var(--color2);
     border-radius: 20px;
     backdrop-filter: blur(15px);
     display: flex;
@@ -44,7 +47,7 @@ h2 {
     left: 5px;
     color: white;
     transform: translateY(-50%);
-    transition: .5s;
+    transition: .4s;
     pointer-events: none;
 }
 
@@ -60,7 +63,6 @@ input:not(:placeholder-shown)~label {
     border: none;
     outline: none;
     font-size: 1em;
-    padding: 0 35px 0 5px;
     color: white;
 }
 
@@ -73,17 +75,33 @@ input:not(:placeholder-shown)~label {
 
 .remember a {
     color: white;
+    text-decoration: none;
+}
+
+.remember a:hover {
+    text-decoration: underline;
+}
+
+.remember label,
+.remember label input {
+    cursor: pointer;
+    user-select: none;
 }
 
 button {
     width: 100%;
     height: 40px;
     background-color: var(--color4);
+    color: white;
     border-radius: 40px;
     border: none;
     outline: none;
     cursor: pointer;
     font-weight: 600;
+}
+
+button:hover {
+    background-color: var(--color3);
 }
 
 .register {

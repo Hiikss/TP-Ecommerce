@@ -1,17 +1,20 @@
 :root {
     --color1: #f0f0f0;
-    --color2: #e3e0cc;
-    --color3: #c5d5c5;
-    --color4: #9fa9a3;
-}
-
-::selection {
-    background: var(--color4);
+    --color2: #a1cca5;
+    --color3: #8fb996;
+    --color4: #709775;
+    --color5: #415d43;
 }
 
 body {
     background-color: var(--color1);
-    font-family: 'Schibsted Grotesk', sans-serif;
+    font-family: 'Schibsted Grotesk', sans-serif;   
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -55,11 +58,12 @@ nav a:hover {
 }
 
 footer {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--color4);
     color: white;
-    padding: 2rem 0;
-    bottom: 0;
     width: 100%;
-    position: absolute;
+    height: 4rem;
+    margin-top: auto;
 }
