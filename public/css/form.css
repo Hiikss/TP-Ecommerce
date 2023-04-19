@@ -53,6 +53,14 @@ h2 {
     pointer-events: none;
 }
 
+.invalid-field label {
+    color: crimson !important;
+}
+
+.invalid-field {
+    border-bottom: 1px solid crimson !important;
+}
+
 input:focus~label,
 input:not(:placeholder-shown)~label {
     top: -10px;
@@ -103,7 +111,7 @@ input:-webkit-autofill {
 
 }
 
-.remember input:hover + label,
+.remember input:hover+label,
 .remember label:hover {
     color: var(--color4);
 }
