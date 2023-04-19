@@ -1,12 +1,68 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block extrastyles %}
+    <link rel="stylesheet" href="{{ asset('css/form.css') }}">
+{% endblock %}
+
+{% block title %}Inscription{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
-
-    {{ form_start(registrationForm) }}
-        {{ form_widget(registrationForm) }}
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+    <section>
+        <div class="form-box">
+            <div class="form">
+                <h2>Inscription</h2>
+                {{ form_start(registrationForm) }}
+                <div class="row">
+                    <div class="inputbox">
+                        {{ form_widget(registrationForm.email) }}
+                        {{ form_label(registrationForm.email) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="inputbox">
+                        {{ form_widget(registrationForm.prenom) }}
+                        {{ form_label(registrationForm.prenom) }}
+                    </div>
+                    <div class="inputbox">
+                        {{ form_widget(registrationForm.nom) }}
+                        {{ form_label(registrationForm.nom) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="inputbox">
+                        {{ form_widget(registrationForm.adresse1) }}
+                        {{ form_label(registrationForm.adresse1) }}
+                    </div>
+                    <div class="inputbox">
+                        {{ form_widget(registrationForm.code_postal) }}
+                        {{ form_label(registrationForm.code_postal) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="inputbox">
+                        {{ form_widget(registrationForm.ville) }}
+                        {{ form_label(registrationForm.ville) }}
+                    </div>
+                    <div class="inputbox">
+                        {{ form_widget(registrationForm.adresse2) }}
+                        {{ form_label(registrationForm.adresse2) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="inputbox">
+                        {{ form_widget(registrationForm.password.first) }}
+                        {{ form_label(registrationForm.password.first) }}
+                    </div>
+                    <div class="inputbox">
+                        {{ form_widget(registrationForm.password.second) }}
+                        {{ form_label(registrationForm.password.second) }}
+                    </div>
+                </div>
+                <div class="row-button">
+                    <button type="submit" class="btn">S'inscrire</button>
+                </div>
+                {{ form_end(registrationForm) }}
+            </div>
+        </div>
+    </section>
 {% endblock %}

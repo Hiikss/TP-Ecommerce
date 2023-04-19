@@ -22,26 +22,47 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('email', EmailType::class)
-            ->add('prenom', TextType::class, [
-                'label' => 'Prénom'
+            ->add('email', EmailType::class, [
+                'attr' => [
+                    'placeholder' => ' ',
+                    'autofocus' => true
+                ]
             ])
-            ->add('nom', TextType::class)
+            ->add('prenom', TextType::class, [
+                'label' => 'Prénom',
+                'attr' => [
+                    'placeholder' => ' '
+                ]
+            ])
+            ->add('nom', TextType::class, [
+                'attr' => [
+                    'placeholder' => ' '
+                ]
+            ])
             ->add('adresse1', TextType::class, [
-                'label' => 'Adresse principale'
+                'label' => 'Adresse principale',
+                'attr' => [
+                    'placeholder' => ' '
+                ]
             ])
             ->add('adresse2', TextType::class, [
-                'label' => 'Adresse secondaire',
-                'required' => false
+                'label' => 'Complément d\'adresse',
+                'required' => false,
+                'attr' => [
+                    'placeholder' => ' '
+                ]
             ])
-            ->add('code_postal', IntegerType::class, [
-                'constraints' => new Length([
-                    'min' => 5,
-                    'max' => 5,
-                    'exactMessage' => 'Le code postal doit faire {{ limit }} chiffres'
-                    ])
+            ->add('code_postal', TextType::class, [
+                'attr' => [
+                    'placeholder' => ' ',
+                    'pattern' => '[0-9]{5}'
+                ]
             ])
-            ->add('ville', TextType::class)
+            ->add('ville', TextType::class, [
+                'attr' => [
+                    'placeholder' => ' '
+                ]
+            ])
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'mapped' => false,
@@ -60,8 +81,14 @@ class RegistrationFormType extends AbstractType
                 'invalid_message' => 'Les mots de passe ne correspondent pas',
                 'options' => ['attr' => ['class' => 'password-field']],
                 'required' => true,
-                'first_options'  => ['label' => 'Mot de passe'],
-                'second_options' => ['label' => 'Confirmer mot de passe'],
+                'first_options'  => [
+                    'label' => 'Mot de passe',
+                    'attr' => ['placeholder' => ' ']
+                ],
+                'second_options' => [
+                    'label' => 'Confirmer mot de passe',
+                    'attr' => ['placeholder' => ' ']
+                ],
             ])
             /*->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
