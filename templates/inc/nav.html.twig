@@ -8,7 +8,7 @@
         {% if is_granted("ROLE_ADMIN") %}
             <a href="{{ path('main_home') }}" title="Panel admin">Admin</a>
         {% endif %}
-        <a href="{{ path('app_logout') }}" title="Déconnexion">Logout</a>
+        <a href="{{ path('app_logout') }}" title="Déconnexion">Déconnexion</a>
     {% else %}
         <a href="{{ path('app_login') }}" title="Se connecter">Connexion</a>
         <a href="{{ path('app_register') }}" title="S'inscrire">Inscription</a>

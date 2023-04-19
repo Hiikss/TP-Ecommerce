@@ -21,7 +21,7 @@ section {
     position: relative;
     width: 100%;
     height: 100%;
-    padding: 2rem;
+    padding: 2rem 1rem;
     background-color: var(--color2);
     border-radius: 20px;
     display: flex;
@@ -33,6 +33,7 @@ h2 {
     font-size: 2em;
     color: white;
     text-align: center;
+    margin: 0 auto 40px;
 }
 
 .inputbox {
@@ -46,6 +47,7 @@ h2 {
     top: 50%;
     left: 5px;
     color: white;
+    font-weight: 600;
     transform: translateY(-50%);
     transition: .4s;
     pointer-events: none;
@@ -53,12 +55,12 @@ h2 {
 
 input:focus~label,
 input:not(:placeholder-shown)~label {
-    top: -5px;
+    top: -10px;
 }
 
 .inputbox input {
     width: 100%;
-    height: 35px;
+    height: 1.7rem;
     background: transparent;
     border: none;
     outline: none;
@@ -67,13 +69,18 @@ input:not(:placeholder-shown)~label {
     padding-left: 5px;
 }
 
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 50px var(--color2) inset;
+    -webkit-text-fill-color: white;
+}
+
 ::-ms-reveal {
     filter: invert(100%);
 }
 
 .options {
     color: white;
-    margin: -10px auto 20px;
+    margin: -5px auto 25px;
     display: flex;
     justify-content: space-between;
 }
@@ -84,7 +91,8 @@ input:not(:placeholder-shown)~label {
 }
 
 .options a:hover {
-    text-decoration: underline;
+    /*text-decoration: underline;*/
+    color: var(--color4);
 }
 
 .remember label,
@@ -93,6 +101,11 @@ input:not(:placeholder-shown)~label {
     user-select: none;
     accent-color: var(--color4);
 
+}
+
+.remember input:hover + label,
+.remember label:hover {
+    color: var(--color4);
 }
 
 button {
@@ -124,13 +137,14 @@ button:hover {
 }
 
 .register p a:hover {
-    text-decoration: underline;
+    /*text-decoration: underline;*/
+    color: var(--color4);
 }
 
 .row {
     display: flex;
     justify-content: space-between;
-    margin: 30px 0;
+    margin: 35px 0;
     gap: 40px;
 }
 
