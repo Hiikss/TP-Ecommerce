@@ -31,42 +31,46 @@ class RegistrationFormType extends AbstractType
             ->add('prenom', TextType::class, [
                 'label' => 'Prénom',
                 'attr' => [
-                    'placeholder' => ' '
+                    'placeholder' => ' ',
+                    'maxlength' => 50
                 ]
             ])
             ->add('nom', TextType::class, [
                 'attr' => [
-                    'placeholder' => ' '
+                    'placeholder' => ' ',
+                    'maxlength' => 50
                 ]
             ])
             ->add('adresse1', TextType::class, [
                 'label' => 'Adresse principale',
                 'attr' => [
-                    'placeholder' => ' '
+                    'placeholder' => ' ',
+                    'maxlength' => 95
                 ]
             ])
             ->add('adresse2', TextType::class, [
                 'label' => 'Complément d\'adresse',
                 'required' => false,
                 'attr' => [
-                    'placeholder' => ' '
+                    'placeholder' => ' ',
+                    'maxlength' => 95
                 ]
             ])
             ->add('code_postal', TextType::class, [
                 'attr' => [
                     'placeholder' => ' ',
-                    'pattern' => '[0-9]{5}'
                 ]
             ])
             ->add('ville', TextType::class, [
                 'attr' => [
-                    'placeholder' => ' '
+                    'placeholder' => ' ',
+                    'maxlength' => 35
                 ]
             ])
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'mapped' => false,
-                'attr' => ['autocomplete' => 'new-password'],
+                'attr' => ['autocomplete' => 'new-password', 'minlength' => 6],
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Veuillez entrer un mot de passe',
@@ -83,11 +87,11 @@ class RegistrationFormType extends AbstractType
                 'required' => true,
                 'first_options'  => [
                     'label' => 'Mot de passe',
-                    'attr' => ['placeholder' => ' ']
+                    'attr' => ['placeholder' => ' ', 'minlength' => '6']
                 ],
                 'second_options' => [
                     'label' => 'Confirmer mot de passe',
-                    'attr' => ['placeholder' => ' ']
+                    'attr' => ['placeholder' => ' ', 'minlength' => '6']
                 ],
             ])
             /*->add('plainPassword', PasswordType::class, [
