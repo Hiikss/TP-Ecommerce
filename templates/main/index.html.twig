@@ -1,7 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MainController!{% endblock %}
+{% block title %}Accueil{% endblock %}
+
+{% block extrastyles %}
+    <link rel="stylesheet" href="{{ asset('css/articles.css') }}">
+{% endblock %}
 
 {% block body %}
-
+<section class="articles-list">
+    <h2>Liste des articles du site</h2>
+        <div class="list">
+        {% for produit in produits %}
+            <article>
+                <div class="produit">
+                    <a href="{{ path('produit_details', {'id': produit.id}) }}" title="Voir détails du produit">
+                        <img src="{{ asset('img/products/' ~ produit.photo) }}" alt="{{ produit.nom }}">
+                        <div class="nom">{{ produit.nom }}</div>
+                        <div class="prix">{{ produit.prix|format_currency('EUR', locale='fr') }}</div>
+                    </a>
+                </div>
+            </article>
+        {% endfor %}
+    </div>
+</section>
 {% endblock %}
