@@ -9,7 +9,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {% block extrastyles %}{% endblock %}
@@ -24,7 +25,8 @@
         <header>
             <div class="header-top">
                 <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
-                <h1><a href="{{ path('main_home') }}">E-commerce</a></h1>
+                <ion-icon name="close-outline" class="close-menu-icon"></ion-icon>
+                <h1><a href="{{ path('main_home') }}" class="nav-click">E-commerce</a></h1>
                 {% include "inc/nav.html.twig" %}
             </div>
         </header>
@@ -38,5 +40,31 @@
         </footer>
     </div>
 </body>
+<script>
+    const menuIcon = document.querySelector(".menu-icon")
+    const closeMenuIcon = document.querySelector(".close-menu-icon")
+    const nav = document.querySelector("nav")
+    const container = document.querySelector('.container')
+
+    menuIcon.addEventListener('click', () => {
+        nav.classList.toggle('mobile-menu')
+        menuIcon.classList.toggle('mobile-menu')
+        closeMenuIcon.classList.toggle('mobile-menu')
+    })
+
+    closeMenuIcon.addEventListener('click', () => {
+        nav.classList.toggle('mobile-menu')
+        menuIcon.classList.toggle('mobile-menu')
+        closeMenuIcon.classList.toggle('mobile-menu')
+    })
+
+    container.addEventListener('click', () => {
+        if(nav.classList.contains('mobile-menu') && !event.target.classList.contains('mobile-menu') && !event.target.classList.contains('nav-click')) {
+            nav.classList.toggle('mobile-menu')
+            menuIcon.classList.toggle('mobile-menu')
+            closeMenuIcon.classList.toggle('mobile-menu')
+        }
+    })
+</script>
 
 </html>
