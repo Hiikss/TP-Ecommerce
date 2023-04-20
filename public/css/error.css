@@ -1,0 +1,18 @@
+section {
+    text-align: center;
+}
+
+h1 {
+    color: crimson;
+}
+
+.error-text {
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
