@@ -100,13 +100,17 @@ footer {
 }
 
 @media all and (max-width: 767px) {
+    header {
+        height: 50px;
+    }
+
     .header-top {
-        margin-left: 5px;
-        height: 64px;
+        margin-top: 5px;
     }
 
     h1 {
         text-align: center;
+        margin: auto;
     }
 
     .menu-icon {
@@ -117,6 +121,7 @@ footer {
         color: white;
         font-size: 2.2rem;
         z-index: 2;
+        margin-left: 10px;
         position: absolute;
     }
 
