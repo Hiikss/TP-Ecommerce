@@ -19,7 +19,7 @@ class Commande
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $date_commande = null;
 
-    #[ORM\Column(length: 6)]
+    #[ORM\Column(length: 20)]
     private ?string $statut = null;
 
     #[ORM\ManyToOne(inversedBy: 'commandes')]
@@ -86,7 +86,7 @@ class Commande
     {
         if (!$this->ligneCommandes->contains($ligneCommande)) {
             $this->ligneCommandes->add($ligneCommande);
-            $ligneCommande->setContient($this);
+            $ligneCommande->setCommande($this);
         }
 
         return $this;
@@ -96,8 +96,8 @@ class Commande
     {
         if ($this->ligneCommandes->removeElement($ligneCommande)) {
             // set the owning side to null (unless already changed)
-            if ($ligneCommande->getContient() === $this) {
-                $ligneCommande->setContient(null);
+            if ($ligneCommande->getCommande() === $this) {
+                $ligneCommande->setCommande(null);
             }
         }
 

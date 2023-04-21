@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\LigneCommandeRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: LigneCommandeRepository::class)]
 class LigneCommande
@@ -14,11 +15,12 @@ class LigneCommande
     private ?int $id = null;
 
     #[ORM\Column]
+    #[Assert\GreaterThan(0)]
     private ?int $quantite = null;
 
     #[ORM\ManyToOne(inversedBy: 'ligneCommandes')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Commande $contient = null;
+    private ?Commande $commande = null;
 
     #[ORM\ManyToOne(inversedBy: 'fait_parti')]
     #[ORM\JoinColumn(nullable: false)]
@@ -41,14 +43,14 @@ class LigneCommande
         return $this;
     }
 
-    public function getContient(): ?Commande
+    public function getCommande(): ?Commande
     {
-        return $this->contient;
+        return $this->commande;
     }
 
-    public function setContient(?Commande $contient): self
+    public function setCommande(?Commande $commande): self
     {
-        $this->contient = $contient;
+        $this->commande = $commande;
 
         return $this;
     }
