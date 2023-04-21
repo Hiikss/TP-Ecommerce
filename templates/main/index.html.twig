@@ -13,10 +13,10 @@
         {% for produit in produits %}
             <article>
                 <div class="produit">
-                    <a href="{{ path('produit_details', {'id': produit.id}) }}" title="Voir détails du produit">
-                        <img src="{{ asset('img/products/' ~ produit.photo) }}" alt="{{ produit.nom }}">
-                        <div>{{ produit.nom }}</div>
-                        <div>{{ produit.prix|format_currency('EUR', locale='fr') }}</div>
+                    <a href="{{ path('produit_details', {'id': produit.id}) }}" title="Voir détails du produit" class="nav-click">
+                        <img src="{{ asset('img/products/' ~ produit.photo) }}" alt="{{ produit.nom }}" class="nav-click">
+                        <div class="nom nav-click">{{ produit.nom }}</div>
+                        <div class="prix nav-click">{{ produit.prix|format_currency('EUR', locale='fr') }}</div>
                     </a>
                 </div>
             </article>
