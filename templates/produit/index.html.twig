@@ -3,7 +3,7 @@
 {% block title %}{{ produit.nom }}{% endblock %}
 
 {% block extrastyles %}
-    <link rel="stylesheet" href="{{ asset('css/produit.css') }}">
+<link rel="stylesheet" href="{{ asset('css/produit.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -15,13 +15,16 @@
             <div class="titre-description">Description</div>
             <div class="contenu-description">{{ produit.description }}</div>
         </div>
-        <div class="prix">{{ produit.prix|format_currency('EUR', locale='fr') }}</div>
-        <div>
-            {{ form_start(ligneForm) }}
-            {{ form_widget(ligneForm) }}
+        {{ form_start(ligneForm) }}
+        <div class="zone-prix">
+            <div class="prix">{{ produit.prix|format_currency('EUR', locale='fr') }}</div>
+            <div>
+                {{ form_label(ligneForm.quantite) }}
+                {{ form_widget(ligneForm.quantite) }}
+            </div>
             <button>Ajouter au panier</button>
-            {{ form_end(ligneForm) }}
         </div>
+        {{ form_end(ligneForm) }}
     </article>
 </section>
 {% endblock %}
